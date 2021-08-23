@@ -12,9 +12,9 @@
 
 数组为什么从0开始计数呢？
 
-> 数组寻址公式：a[k]_address = base_address + k * type_size
-> 如果从1开始就是：a[k]_address = base_address + (k-1)*type_size
-> 从0开始可以减少一次运算
+> 数组寻址公式：a[k]_address = base_address + k * type_size  
+> 如果从1开始就是：a[k]_address = base_address + (k-1)*type_size  
+> 从0开始可以减少一次运算  
 >
 > 当然还有历史原因，C语言开始采用0，其他语言效仿了C，方便C语言开发者学习。
 
