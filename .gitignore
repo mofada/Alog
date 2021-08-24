@@ -1,0 +1,10 @@
+# idea文件
+.idea/
+
+*.iml
+
+# 构建目录
+build/
+
+# 排除目录
+.gradle/
