@@ -4,11 +4,11 @@ package cn.mofada.algo.java._05_array;
  * 1、数组的插入、删除、按照下标随机访问操作
  * 2、数组的数据类型是int
  */
-public class Array {
+public class Array<T> {
     /**
      * 定义数据data用于保存数据
      */
-    public int[] data;
+    public Object[] data;
 
     /**
      * 定义数组中的实际个数
@@ -16,7 +16,7 @@ public class Array {
     private int count;
 
     public Array(int capacity) {
-        this.data = new int[capacity];
+        this.data = new Object[capacity];
         //初始时没有数据，所以为null
         this.count = 0;
     }
@@ -27,10 +27,10 @@ public class Array {
      * @param index
      * @return
      */
-    public int find(int index) {
+    public T find(int index) {
         checkIndex(index);
 
-        return data[index];
+        return (T) data[index];
     }
 
     /**
@@ -40,7 +40,7 @@ public class Array {
      * @param value
      * @return
      */
-    public boolean insert(int index, int value) {
+    public boolean insert(int index, T value) {
         //数组空间已满
         if (count == data.length) {
             //数组已满，需要扩容
@@ -109,14 +109,17 @@ public class Array {
      * 打印数组
      */
     public void printAll() {
-        for (int datum : data) {
+        for (Object datum : data) {
             System.out.print(datum + " ");
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Array array = new Array(5);
+        // 这里测试所以用的int类型
+        // 如果数据用于存储基本数据类型，建议使用数组，不适用列表
+        // 因为每次会进行Autoboxing和Unboxing
+        Array<Integer> array = new Array<>(5);
 
         array.insert(0, 3);
         array.insert(0, 4);
