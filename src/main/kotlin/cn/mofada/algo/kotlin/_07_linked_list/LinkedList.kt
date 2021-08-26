@@ -8,7 +8,6 @@ import com.sun.corba.se.spi.orbutil.fsm.FSM
  * 3)两个有序链表合并
  * 4)删除链表倒数第n个节点
  * 5)求链表的中间节点
- * //todo 链表太难了吧,先看后面的
  */
 object LinkedList {
     /**
