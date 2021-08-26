@@ -1,5 +1,7 @@
 package cn.mofada.algo.kotlin._07_linked_list
 
+import com.sun.corba.se.spi.orbutil.fsm.FSM
+
 /**
  * 1)单链表反转
  * 2)链表中换的检测
@@ -43,11 +45,77 @@ object LinkedList {
             fast = fast.next?.next
             slow = slow.next
 
-            if(slow == fast) return true
+            if (slow == fast) return true
         }
 
         return false
     }
+
+    /**
+     * 有序列表合并
+     */
+//    fun <T> mergeTwoLists(l1: Node<T>?, l2: Node<T>?): Node<T> {
+//        // 利用哨兵结点简化实现难度
+//        var soldier = Node<T>(null, null)
+//        var p = soldier
+//
+//        while (l1 != null && l2 != null) {
+//            if (l1.data < l2.data) {
+//
+//            }
+//        }
+//    }
+
+    /**
+     * 删除倒数第k个节点
+     */
+    fun <T> deleteLastKth(list: Node<T>, k: Int): Node<T>? {
+        var result: Node<T>? = null
+
+        var fast: Node<T>? = list
+        var i = 1
+
+        //首先循环,找到节点k所在位置
+        while (fast != null && i < k) {
+            fast = fast.next;
+            i++
+        }
+
+        // 如果fast为空,说明k是尾节点
+        if (fast == null) return list
+
+        var slow: Node<T>? = list
+        var previous: Node<T>? = null
+
+        while (fast?.next != null) {
+            fast = fast.next
+            previous = slow
+            slow = slow?.next
+        }
+
+        if (previous == null) {
+            result = list.next
+        } else {
+            previous.next = previous.next?.next
+        }
+
+        return result
+    }
+
+    /**
+     * 查找中间节点
+     */
+    fun <T> findMiddleNode(list: Node<T>): Node<T>? {
+        var fast: Node<T>? = null
+        var slow: Node<T>? = null
+
+        while (fast != null && slow != null) {
+            fast = fast.next?.next
+            slow = slow.next?.next
+        }
+
+        return slow
+    }
 }
 
-data class Node<T>(var data: T, var next: Node<T>?)
+data class Node<T>(var data: T?, var next: Node<T>?)
