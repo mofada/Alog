@@ -1,5 +1,7 @@
 package cn.mofada.algo.kotlin._09_queue
 
+import java.util.*
+
 /**
  * 用数组实现的队列
  */

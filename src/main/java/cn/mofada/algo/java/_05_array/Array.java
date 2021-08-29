@@ -1,7 +1,7 @@
 package cn.mofada.algo.java._05_array;
 
 /**
- * 1、数组的插入、删除、按照下标随机访问操作
+ * 1、数组的插入、删除、按照下标0随机访问操作
  * 2、数组的数据类型是int
  */
 public class Array<T> {
@@ -115,18 +115,18 @@ public class Array<T> {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        // 这里测试所以用的int类型
-        // 如果数据用于存储基本数据类型，建议使用数组，不适用列表
-        // 因为每次会进行Autoboxing和Unboxing
-        Array<Integer> array = new Array<>(5);
-
-        array.insert(0, 3);
-        array.insert(0, 4);
-        array.insert(1, 5);
-        array.insert(3, 9);
-        array.insert(3, 10);
-
-        array.printAll();
-    }
+//    public static void main(String[] args) {
+//        // 这里测试所以用的int类型
+//        // 如果数据用于存储基本数据类型，建议使用数组，不适用列表
+//        // 因为每次会进行Autoboxing和Unboxing
+//        Array<Integer> array = new Array<>(5);
+//
+//        array.insert(0, 3);
+//        array.insert(0, 4);
+//        array.insert(1, 5);
+//        array.insert(3, 9);
+//        array.insert(3, 10);
+//
+//        array.printAll();
+//    }
 }
